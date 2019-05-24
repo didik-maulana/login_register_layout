@@ -19,7 +19,7 @@ class RegisterPage extends StatelessWidget {
                   _iconRegister(),
                   _titleDescription(),
                   _textField(),
-                  _buildButton(),
+                  _buildButton(context),
                 ],
               ),
             ),
@@ -146,7 +146,7 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
-  Widget _buildButton() {
+  Widget _buildButton(BuildContext context) {
     return Column(
       children: <Widget>[
         Padding(
@@ -182,6 +182,9 @@ class RegisterPage extends StatelessWidget {
             'Login',
             style: TextStyle(color: Colors.white),
           ),
+          onPressed: () {
+            Navigator.pushNamed(context, "/");
+          },
         ),
       ],
     );

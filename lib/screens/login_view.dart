@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_register_layout/constants.dart';
+import 'package:login_register_layout/screens/register_view.dart';
 
 class LoginPage extends StatelessWidget {
-
-  static const routeName = "/loginPage";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +17,7 @@ class LoginPage extends StatelessWidget {
                   _iconLogin(),
                   _titleDescription(),
                   _textField(),
-                  _buildButton(),
+                  _buildButton(context),
                 ],
               ),
             ),
@@ -121,7 +119,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _buildButton() {
+  Widget _buildButton(BuildContext context) {
     return Column(
       children: <Widget>[
         Padding(
@@ -157,6 +155,9 @@ class LoginPage extends StatelessWidget {
             'Register',
             style: TextStyle(color: Colors.white),
           ),
+          onPressed: () {
+            Navigator.pushNamed(context, RegisterPage.routeName);
+          },
         ),
       ],
     );
