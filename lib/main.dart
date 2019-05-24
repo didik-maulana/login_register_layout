@@ -5,7 +5,7 @@ import 'package:login_register_layout/screens/register_view.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: "Login Register Page",
+    title: "Login Register Layout",
     initialRoute: "/",
     routes: {
       "/" : (context) => LoginPage(),
