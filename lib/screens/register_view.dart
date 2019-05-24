@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_register_layout/constants.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
 
-  static const routeName = "/loginPage";
+  static const routeName = "/registerPage";
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
             Center(
               child: Column(
                 children: <Widget>[
-                  _iconLogin(),
+                  _iconRegister(),
                   _titleDescription(),
                   _textField(),
                   _buildButton(),
@@ -29,9 +29,9 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _iconLogin() {
+  Widget _iconRegister() {
     return Image.asset(
-              "assets/images/icon_login.png",
+              "assets/images/icon_register.png",
               width: 150.0,
               height: 150.0,
             );
@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 16.0),
         ),
         Text(
-          "Login into app",
+          "Registration",
           style: TextStyle(
             color: Colors.white,
             fontSize: 16.0,
@@ -117,6 +117,31 @@ class LoginPage extends StatelessWidget {
           obscureText: true,
           autofocus: false,
         ),
+        Padding(
+          padding: EdgeInsets.only(top: 12.0),
+        ),
+        TextFormField(
+          decoration: const InputDecoration(
+            border: UnderlineInputBorder(),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: ColorPalette.underlineTextField, 
+                width: 1.5,
+              ),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 3.0,
+              ),
+            ),
+            hintText: "Confirm Password",
+            hintStyle: TextStyle(color: ColorPalette.hintColor),
+          ),
+          style: TextStyle(color: Colors.white),
+          obscureText: true,
+          autofocus: false,
+        ),
       ],
     );
   }
@@ -132,7 +157,7 @@ class LoginPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8.0),
             width: double.infinity,
             child: Text(
-              'Login',
+              'Register',
               style: TextStyle(color: ColorPalette.primaryColor),
               textAlign: TextAlign.center,
             ),
@@ -154,7 +179,7 @@ class LoginPage extends StatelessWidget {
         ),
         FlatButton(
           child: Text(
-            'Register',
+            'Login',
             style: TextStyle(color: Colors.white),
           ),
         ),
